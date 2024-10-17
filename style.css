@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #22254b;
+    margin: 0;
+  }
+
+/* 헤더 */
+header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #373b69;
+}
+header h1{
+    padding-left: 20px;
+}
+header a{ text-decoration: none;
+    color: rgb(148, 158, 148); }
+    
+.search {
+    background-color: transparent;
+    border: 1px solid #22254b;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.search:focus {
+    outline: 0;
+    /* 윤곽선 제거  */
+    background-color: #22254b;
+}
+
+.search::placeholder {
+    color: #3778c5;
+}
+
+
+
+/* 메인 */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie {
+    width: 300px;
+    margin: 1rem;
+    border-radius: 5px;
+    background-color: #373b69;
+    position: relative;
+    overflow: hidden;
+}
+
+.movie img {
+    width: 100%;
+}
+.movie_info{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+}
+.movie_info h2{
+    margin-top: 0;
+}
+.movie_info span{
+    background-color: #22254b;
+    padding: 0.3rem 0.5rem;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+.movie_info span.green{color: greenyellow;}
+.movie_info span.orange{color: orange;}
+.movie_info span.red{color: red;}
+
+
+
+.review{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+background-color: #fff;
+padding: 1rem;
+max-width: 100;
+transform: translateY(101%);      
+/*transform: translateY 카드 동작구현 */
+transition:  0.3s ease-in;
+}
+.movie:hover .review{
+    transform: translateY(0);
+}
