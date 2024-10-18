@@ -13,6 +13,9 @@ const form = document.getElementById('form');
 const search = document.getElementById('search');
 
 
+// 북마크 목록 불러오기
+let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+
 
 getmovie(API_URL)
 
@@ -38,10 +41,10 @@ function showmovies(data) {
 
         <div class="movie_info">
             <h2>${original_title}</h2>
-            <span class="${getcolor(vote_average)}">${vote_average}</span>
+            <span class="${getcolor(vote_average)}">${fixe(vote_average)}</span>
         </div>
         <div class="review">
-        <h2>review</h2>
+        <h2>${original_title}</h2>
         ${overview}
         </div>
         `
@@ -65,6 +68,11 @@ function getcolor(vote){
     }else{
         return 'red'
     }
+}
+
+
+function fixe(vote){
+    return vote.toFixed(1);
 }
 
 
