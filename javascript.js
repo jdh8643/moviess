@@ -13,8 +13,6 @@ const form = document.getElementById('form');
 const search = document.getElementById('search');
 
 
-// 북마크 목록 불러오기
-let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
 
 
 getmovie(API_URL)
