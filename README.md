@@ -8,7 +8,7 @@
 ## 기술스택
 <img src='https://www.icia.co.kr/upload/editor/tmpphp5vH0bCbsh.png'>
 
-##구성 및 기능
+## 구성 및 기능
 - 영화 소걔
 - 영화 리뷰
 - 영화 추천도
