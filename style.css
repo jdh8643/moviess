@@ -1,12 +1,13 @@
+/* 기본적인 스타일 */
 * {
     box-sizing: border-box;
 }
 
-
 body {
     background-color: #22254b;
     margin: 0;
-  }
+    font-family: Arial, sans-serif;
+}
 
 /* 헤더 */
 header {
@@ -15,12 +16,16 @@ header {
     justify-content: space-between;
     background-color: #373b69;
 }
-header h1{
+
+header h1 {
     padding-left: 20px;
 }
-header a{ text-decoration: none;
-    color: rgb(148, 158, 148); }
-    
+
+header a {
+    text-decoration: none;
+    color: rgb(148, 158, 148);
+}
+
 .search {
     background-color: transparent;
     border: 1px solid #22254b;
@@ -33,7 +38,6 @@ header a{ text-decoration: none;
 
 .search:focus {
     outline: 0;
-    /* 윤곽선 제거  */
     background-color: #22254b;
 }
 
@@ -41,7 +45,25 @@ header a{ text-decoration: none;
     color: #3778c5;
 }
 
+/* 네비바 */
+#tags {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+}
 
+.tag {
+    color: #fff;
+    padding: 10px 20px;
+    background-color: orange;
+    border-radius: 50px;
+    margin: 10px;
+    display: inline-block;
+    cursor: pointer;
+}
 
 /* 메인 */
 main {
@@ -62,40 +84,107 @@ main {
 .movie img {
     width: 100%;
 }
-.movie_info{
+
+.movie_info {
     color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 1rem 1rem;
 }
-.movie_info h2{
+
+.movie_info h2 {
     margin-top: 0;
 }
-.movie_info span{
+
+.movie_info span {
     background-color: #22254b;
     padding: 0.3rem 0.5rem;
     border-radius: 5px;
     font-weight: bolder;
 }
-.movie_info span.green{color: greenyellow;}
-.movie_info span.orange{color: orange;}
-.movie_info span.red{color: red;}
 
+.movie_info span.green {
+    color: greenyellow;
+}
 
+.movie_info span.orange {
+    color: orange;
+}
 
-.review{
+.movie_info span.red {
+    color: red;
+}
+
+/* 영화 리뷰 */
+.review {
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-background-color: #fff;
-padding: 1rem;
-max-width: 100;
-transform: translateY(101%);      
-/*transform: translateY 카드 동작구현 */
-transition:  0.3s ease-in;
+    background-color: #fff;
+    padding: 1rem;
+    max-width: 100%;
+    transform: translateY(101%);
+    transition: 0.3s ease-in;
 }
-.movie:hover .review{
+
+.movie:hover .review {
     transform: translateY(0);
+}
+
+/* 모달 스타일 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalMain {
+    background-color: #fefefe;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+.modalMain img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.modalMain h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.modalMain p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.modalMain .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.modalMain .close:hover {
+    color: red;
+}
+
+/* 모달 내 텍스트 정렬 */
+.modalMain strong {
+    font-size: 18px;
 }
